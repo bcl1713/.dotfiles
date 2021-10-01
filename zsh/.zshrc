@@ -10,3 +10,6 @@ zstyle :compinstall filename '/home/brian/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
