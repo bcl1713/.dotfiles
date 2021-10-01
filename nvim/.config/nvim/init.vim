@@ -11,7 +11,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tami5/lspsaga.nvim'
   
   Plug 'airblade/vim-gitgutter'
-
+  
   "Lualine
   Plug 'hoob3rt/lualine.nvim'
   Plug 'ryanoasis/vim-devicons'
