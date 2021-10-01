@@ -11,6 +11,7 @@ call plug#begin(stdpath('data') . '/plugged')
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim'
+        Plug 'andweeb/presence.nvim'
 
 call plug#end()
 
