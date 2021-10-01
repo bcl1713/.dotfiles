@@ -10,9 +10,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'neovim/nvim-lspconfig'
   Plug 'tami5/lspsaga.nvim'
   
-  "Airline
-  "Plug 'vim-airline/vim-airline'
-  "Plug 'vim-airline/vim-airline-themes'
+  Plug 'airblade/vim-gitgutter'
 
   "Lualine
   Plug 'hoob3rt/lualine.nvim'
