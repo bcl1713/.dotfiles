@@ -72,6 +72,8 @@ augroup end
 
 "set background=dark
 colorscheme gruvbox
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
