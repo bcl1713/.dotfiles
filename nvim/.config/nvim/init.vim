@@ -10,8 +10,12 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'neovim/nvim-lspconfig'
   Plug 'tami5/lspsaga.nvim'
   
+  "Gitgutter
   Plug 'airblade/vim-gitgutter'
   
+  "Pandoc Previewer
+  Plug 'davidgranstrom/nvim-markdown-preview'
+
   "Lualine
   Plug 'hoob3rt/lualine.nvim'
   Plug 'ryanoasis/vim-devicons'
