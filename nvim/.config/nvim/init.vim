@@ -34,6 +34,9 @@ call plug#begin(stdpath('data') . '/plugged')
   "Fugitive for Git
   Plug 'tpope/vim-fugitive'
 
+  "Auto Piars
+  Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 lua require'mylualine'.setup()
