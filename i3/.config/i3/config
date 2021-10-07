@@ -210,6 +210,6 @@ client.urgent           $red $red $white $red $red
 exec setxkbmap -option caps:ctrl_modifier
 
 exec picom -f &
-exec feh --bg-fil ~/Downloads/gruvbackground.png
+exec feh --bg-fil /usr/share/backgrounds/Background.png
 
 focus_follows_mouse no

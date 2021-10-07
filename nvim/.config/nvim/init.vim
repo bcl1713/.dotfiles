@@ -26,6 +26,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
   "Telescope
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   
   "Discord Presence
@@ -33,6 +34,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
   "Fugitive for Git
   Plug 'tpope/vim-fugitive'
+
+  "Harpoon
+  Plug 'ThePrimeagen/harpoon'
 
   "Auto Piars
   Plug 'jiangmiao/auto-pairs'
@@ -85,3 +89,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>df <cmd> Telescope find_files hidden=true search_dirs=~/.dotfiles<CR>
+nnoremap <leader>ft <cmd>Telescope file_browser<CR>
+nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>hf :lua require("harpoon.ui").toggle_quick_menu()<CR>
