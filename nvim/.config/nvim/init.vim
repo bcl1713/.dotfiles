@@ -90,5 +90,5 @@ nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>df <cmd> Telescope find_files hidden=true search_dirs=~/.dotfiles<CR>
 nnoremap <leader>ft <cmd>Telescope file_browser<CR>
-nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hf :lua require("harpoon.ui").toggle_quick_menu()<CR>
