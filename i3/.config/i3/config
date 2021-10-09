@@ -211,5 +211,6 @@ exec setxkbmap -option caps:ctrl_modifier
 
 exec picom -f &
 exec feh --bg-fil /usr/share/backgrounds/Background.png
+exec xbindkeys -p
 
 focus_follows_mouse no
