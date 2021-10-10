@@ -102,3 +102,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR='nvim'
+
+alias luamake=/home/brian/Downloads/lua-language-server/3rd/luamake/luamake
