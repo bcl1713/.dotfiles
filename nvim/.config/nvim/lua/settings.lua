@@ -1,6 +1,6 @@
 O.hlsearch = false
 O.incsearch = true
-O.cmdheight = 2
+O.cmdheight = 1
 O.scrolloff = 8
 O.updatetime = 50
 O.backup = false

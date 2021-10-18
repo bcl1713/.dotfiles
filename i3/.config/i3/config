@@ -9,9 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class=".*"] border pixel 0
-gaps inner 15
-gaps outer 15
+for_window [class=".*"] border pixel 05
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -200,9 +198,9 @@ bar {
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.focused          $green $green $darkgray $blue $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $blue $darkgray
+client.unfocused        $darkgray $darkgray $yellow $blue $darkgray
 client.urgent           $red $red $white $red $red
 
 
