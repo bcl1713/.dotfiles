@@ -9,7 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class=".*"] border pixel 05
+for_window [class=".*"] border pixel 0
+set $gaps 0
+gaps inner $gaps
+gaps outer 2
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -208,7 +211,6 @@ client.urgent           $red $red $white $red $red
 exec setxkbmap -option caps:ctrl_modifier
 
 exec picom -f &
-# exec feh --bg-fil /usr/share/backgrounds/Background.png
 exec xbindkeys -p
 
 focus_follows_mouse no
