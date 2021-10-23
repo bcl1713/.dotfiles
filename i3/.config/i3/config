@@ -188,11 +188,11 @@ bar {
 	colors {
 		# bar background color
 		background $bg
-		statusline $yellow
-		focused_workspace $aqua $aqua $darkgray
-		inactive_workspace $darkgray $darkgray $yellow
-		active_workspace $darkgray $darkgray $yellow
-		urgent_workspace $red $red $bg
+		statusline $blue
+		focused_workspace $blue $blue $darkgray
+		inactive_workspace $darkgray $darkgray $green
+		active_workspace $darkgray $darkgray $blue
+		urgent_workspace $purple $purple $bg
 	}
 }
 
@@ -208,7 +208,7 @@ client.urgent           $red $red $white $red $red
 exec setxkbmap -option caps:ctrl_modifier
 
 exec picom -f &
-exec feh --bg-fil /usr/share/backgrounds/Background.png
+# exec feh --bg-fil /usr/share/backgrounds/Background.png
 exec xbindkeys -p
 
 focus_follows_mouse no
