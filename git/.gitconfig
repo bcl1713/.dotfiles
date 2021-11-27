@@ -1,3 +1,5 @@
 [user]
 	email = bcl1713@gmail.com
 	name = Brian Lucas
+[credential]
+	helper = cache

@@ -46,4 +46,9 @@ return require('packer').startup(function(use)
   --Discord
   use 'andweeb/presence.nvim'
 
+  --Autosource
+  use {'jenterkin/vim-autosource',
+        config ='require(nv-autosource)'}
+
+
 end)
