@@ -32,7 +32,6 @@ close(ACPI);
 if ($acpi !~ /: (\w+), (\d+)%/) {
 	die "$acpi\n";
 }
-
 $status = $1;
 $percent = $2;
 $full_text = "$percent%";
@@ -41,6 +40,8 @@ if ($status eq 'Discharging') {
 	$full_text .= ' DIS';
 } elsif ($status eq 'Charging') {
 	$full_text .= ' CHR';
+} elsif ($status eq 'Not') {
+  $full_text .= ' NCH';
 }
 
 $short_text = $full_text;
