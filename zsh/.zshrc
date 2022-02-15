@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR='nvim'
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 alias luamake=/home/brian/Downloads/lua-language-server/3rd/luamake/luamake
 
 # neofetch startup
