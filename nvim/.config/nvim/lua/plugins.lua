@@ -22,10 +22,6 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   use 'windwp/nvim-autopairs'
 
-  --Pandoc Previewer
-  use {'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install'}
-
   --Lualine
   use 'hoob3rt/lualine.nvim'
   use 'ryanoasis/vim-devicons'
@@ -45,10 +41,5 @@ return require('packer').startup(function(use)
 
   --Discord
   use 'andweeb/presence.nvim'
-
-  --Autosource
-  use {'jenterkin/vim-autosource',
-        config ='require(nv-autosource)'}
-
 
 end)
