@@ -167,9 +167,9 @@ bindsym $mod+r mode "resize"
 
 # Print Screen Scripts
 # Region
-bindsym --release Print exec "~/bin/scregcp -s /home/brian/screenshots/"
-# Whoel Screen
-bindsym --release Shift+Print exec "~/bin/scregcp /home/brian/screenshots/"
+bindsym --release $mod+Shift+p exec "~/bin/scregcp -s /home/brian/screenshots/"
+# Whole Screen
+bindsym --release $mod+p exec "~/bin/scregcp /home/brian/screenshots/"
 
 # THEME
 
