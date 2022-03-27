@@ -30,6 +30,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+floating_minimum_size 450 x 450
+floating_maximum_size 1500 x 1500
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -212,5 +214,6 @@ exec setxkbmap -option caps:ctrl_modifier
 
 exec picom -f &
 exec xbindkeys -p
+exec xrandr --output eDP-1 --auto --scale 0.5x0.5 --output DP-1 --auto --above eDP-1
 
 focus_follows_mouse no
