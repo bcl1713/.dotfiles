@@ -3,6 +3,9 @@ return require('packer').startup(function(use)
   --Packer
   use 'wbthomason/packer.nvim'
 
+  --Pencil
+  use 'preservim/vim-pencil'
+
   --Gruvbox
   use 'gruvbox-community/gruvbox'
 
