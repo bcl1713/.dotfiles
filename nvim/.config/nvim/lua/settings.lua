@@ -20,4 +20,4 @@ O.wrap = false
 WO.number = true
 WO.relativenumber = true
 WO.signcolumn = 'yes'
-WO.colorcolumn = '80'
+WO.colorcolumn = '81'

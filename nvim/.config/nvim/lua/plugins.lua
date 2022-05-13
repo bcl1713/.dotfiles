@@ -6,16 +6,40 @@ return require('packer').startup(function(use)
   --Pencil
   use 'preservim/vim-pencil'
 
+  --Markdown Preview
+  use ({
+    'iamcco/markdown-preview.nvim', 
+    run = 'cd app && yarn install', 
+    setup = function() vim.g.mkdp_files = {
+        "markdown"
+      } end, 
+    ft = {
+      "markdown"
+    }, 
+    })
+
   --Gruvbox
   use 'gruvbox-community/gruvbox'
+
+  --Nord
+  use 'arcticicestudio/nord-vim'
 
   --LSP Stuffs
   use 'mfussenegger/nvim-jdtls'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
   use 'onsails/lspkind-nvim'
   use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'tami5/lspsaga.nvim'
+
+  --Trouble
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 
   --Git stuffs
   use 'airblade/vim-gitgutter'
@@ -38,9 +62,16 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
 
   --Harpoon
   use 'ThePrimeagen/harpoon'
+
+  --Plyglot
+  use 'sheerun/vim-polyglot'
+
+  --CloseTags
+  --use 'alvan/vim-closetag'
 
   --Discord
   use 'andweeb/presence.nvim'

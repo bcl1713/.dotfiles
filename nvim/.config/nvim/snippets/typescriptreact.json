@@ -1,0 +1,14 @@
+{
+  "reactFunctionComponent": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "export default function ${TM_FILENAME_BASE}() {",
+      "\treturn (",
+      "\t\t$0",
+      "\t)",
+      "}"
+    ],
+    "description": "Functional Compnent Template"
+  }
+}

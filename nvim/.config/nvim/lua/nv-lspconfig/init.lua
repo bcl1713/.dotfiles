@@ -1,5 +1,9 @@
 local on_attach = function(client, bufnr)
   require('nv-lspconfig.keybinds')
+  
+  if client.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end
 end
 
 G.completion_enable_snippet = 'snippets.nvim'
@@ -7,7 +11,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconf = require "lspconfig"
-local servers = { "clangd" , "pyright", "eslint", "tsserver"}
+local servers = { "clangd" , "pyright", "eslint"}
 
 -- Load language servers
 for _, lang in ipairs(servers) do
@@ -17,6 +21,30 @@ for _, lang in ipairs(servers) do
         capabilities = capabilities
     }
 end
+
+lspconf.tsserver.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+
+        local ts_utils = require("nvim-lsp-ts-utils")
+        ts_utils.setup({})
+        ts_utils.setup_client(client)
+
+        on_attach(client, bufnr)
+    end,
+})
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.formatting.prettier
+    },
+    on_attach = on_attach
+})
 
 -- Lua LSP Specific
 -- USER = "/home/" .. vim.fn.expand("$USER")
