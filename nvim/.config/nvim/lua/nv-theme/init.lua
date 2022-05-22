@@ -1,3 +1,3 @@
 O.background = 'dark'
-CMD 'colorscheme nord'
+CMD 'colorscheme gruvbox'
 CMD 'au VimEnter * highlight Normal ctermbg=none'
