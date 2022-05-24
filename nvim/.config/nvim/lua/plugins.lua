@@ -8,14 +8,8 @@ return require('packer').startup(function(use)
 
   --Markdown Preview
   use ({
-    'iamcco/markdown-preview.nvim', 
-    run = 'cd app && yarn install', 
-    setup = function() vim.g.mkdp_files = {
-        "markdown"
-      } end, 
-    ft = {
-      "markdown"
-    }, 
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
     })
 
   --Gruvbox

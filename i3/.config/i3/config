@@ -9,15 +9,15 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-#for_window [class=".*"] border pixel 0
-#set $gaps 0
-#gaps inner $gaps
-#gaps outer 2
+for_window [class=".*"] border pixel 0
+set $gaps 20
+gaps inner 20
+gaps outer -10
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 
-font pango:FiraCode Nerd Font Mono 11
+font pango:FiraCode Nerd Font Mono 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
@@ -220,9 +220,8 @@ client.urgent           $red $red $white $red $red
 # Remap cap to ctl key
 exec setxkbmap -option caps:ctrl_modifier
 
-exec picom -f &
 exec xbindkeys -p
 exec xrandr --output eDP-1 --auto --scale 0.5x0.5 --output DP-1 --auto --above eDP-1
-exec --no-startup-id xsetroot -solid "#282828"
+exec sleep 0.5 && ~/.fehbg && picom -f &
 
 focus_follows_mouse no
