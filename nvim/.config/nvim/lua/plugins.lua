@@ -1,5 +1,12 @@
-return require('packer').startup(function(use)
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
+end
 
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
   --Packer
   use 'wbthomason/packer.nvim'
 
@@ -19,9 +26,14 @@ return require('packer').startup(function(use)
   use 'arcticicestudio/nord-vim'
 
   --LSP Stuffs
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'mfussenegger/nvim-jdtls'
-  use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp'
   use 'rafamadriz/friendly-snippets'
   use 'onsails/lspkind-nvim'
   use 'neovim/nvim-lspconfig'
@@ -42,11 +54,17 @@ return require('packer').startup(function(use)
   --Bracket completion
   use 'jiangmiao/auto-pairs'
   use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+
 
   --Lualine
   use 'hoob3rt/lualine.nvim'
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
+
+  --Bufferline
+  use 'akinsho/nvim-bufferline.lua'
+
 
   --Treesitter
   use {'nvim-treesitter/nvim-treesitter',
