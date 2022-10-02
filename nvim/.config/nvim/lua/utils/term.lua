@@ -2,7 +2,7 @@ local M = {}
 
 local Terminal = require("toggleterm.terminal").Terminal
 
-local git_cz = "cit cz"
+local git_cz = "git cz"
 
 
 local git_commit = Terminal:new {
@@ -11,7 +11,7 @@ local git_commit = Terminal:new {
   hidden = false,
   direction = "float",
   float_opts = {
-    border = "double",
+    border = "single",
   },
 }
 
