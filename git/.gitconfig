@@ -3,3 +3,5 @@
 	name = Brian Lucas
 [credential]
 	helper = cache
+[init]
+	defaultBranch = main

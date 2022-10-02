@@ -10,6 +10,7 @@ packer.startup(function(use)
   --Packer
   use 'wbthomason/packer.nvim'
 
+  use 'akinsho/toggleterm.nvim'
   --Pencil
   use 'preservim/vim-pencil'
 
@@ -30,16 +31,21 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'mfussenegger/nvim-jdtls'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/vim-vsnip'
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'davidsierradz/cmp-conventionalcommits',
+    },
+  }
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'rafamadriz/friendly-snippets'
   use 'onsails/lspkind-nvim'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'tami5/lspsaga.nvim'
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
 
   --Trouble
   use {

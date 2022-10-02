@@ -7,9 +7,6 @@ require 'plugins'
 -- Theme
 require 'nv-theme'
 
--- Snippets
-require 'nv-vsnip'
-
 -- Telescope
 require 'nv-telescope'
 

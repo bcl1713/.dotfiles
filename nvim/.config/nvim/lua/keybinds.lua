@@ -11,5 +11,7 @@ local opt = {}
 -- Disable 'Space' key
 map('n', '<Space>', '', opt)
 
+map('n', 'gc', "<cmd>lua require('utils.term').git_commit_toggle()<CR>", opt)
+
 -- Set 'Space' as leader
 G.mapleader = ' '
