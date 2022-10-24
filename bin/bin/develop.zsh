@@ -1,7 +1,7 @@
 #!/bin/zsh
 i3-msg "workspace 2 dev"
 sleep 0.5
-i3-msg "exec kitty --directory '~/dev/associationof1a3s-web' --listen-on unix:/tmp/develop"
+i3-msg "exec kitty --directory '~/dev/associationof1a3s-web/src' --listen-on unix:/tmp/develop"
 sleep 0.5
 i3-msg "split horizontal"
 sleep 0.5
