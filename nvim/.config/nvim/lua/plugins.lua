@@ -44,7 +44,11 @@ packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'tami5/lspsaga.nvim'
-  use 'L3MON4D3/LuaSnip'
+  use {
+    'L3MON4D3/LuaSnip',
+    after = 'nvim-cmp',
+  }
+  use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
 
   --Trouble
@@ -61,6 +65,7 @@ packer.startup(function(use)
   use 'jiangmiao/auto-pairs'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use 'tpope/vim-surround'
 
 
   --Lualine

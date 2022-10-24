@@ -16,6 +16,7 @@ O.tabstop = 2
 O.softtabstop = 2
 O.shiftwidth = 2
 O.wrap = false
+O.updatetime = 250
 
 WO.number = true
 WO.relativenumber = true
