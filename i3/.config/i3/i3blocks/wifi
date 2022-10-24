@@ -17,7 +17,7 @@
 #------------------------------------------------------------------------
 
 if [ $button ]; then 
-    kitty --class floating_term nmtui
+    nmcli device wifi rescan & kitty --class floating_term nmtui
 fi
 
 INTERFACE="${BLOCK_INSTANCE:-wlan0}"
@@ -27,8 +27,8 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
 
-[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
+#[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
+#    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
 
 #------------------------------------------------------------------------
 

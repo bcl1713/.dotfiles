@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 for_window [class=".*"] border pixel 0
-for_window [class="floating_term"] floating enable
+for_window [class="floating_term"] floating enable, resize set 500px 500px
 set $gaps 20
 gaps inner 20
 gaps outer -10
@@ -148,7 +148,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # volume and wifi shortcuts
-bindsym $mod+Shift+w exec "kitty --class floating_term nmtui"
+bindsym $mod+ctrl+w exec "nmcli device wifi rescan"
+bindsym $mod+Shift+w exec "nmcli device wifi rescan & kitty --class floating_term nmtui"
 bindsym $mod+Shift+v exec "kitty --class floating_term alsamixer"
 
 # resize window (you can also use the mouse for that)
