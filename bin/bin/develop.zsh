@@ -1,20 +1,20 @@
 #!/bin/zsh
 i3-msg "workspace 2 dev"
-sleep 0.1
+sleep 0.5
 i3-msg "exec kitty --directory '~/dev/associationof1a3s-web' --listen-on unix:/tmp/develop"
-sleep 0.1
+sleep 0.5
 i3-msg "split horizontal"
-sleep 0.1
+sleep 0.5
 i3-msg "workspace 4 serv"
-sleep 0.1
+sleep 0.5
 i3-msg "exec kitty --directory '~/dev/associationof1a3s-web' --listen-on unix:/tmp/emulators"
-sleep 0.1
+sleep 0.5
 i3-msg "split vertical"
-sleep 0.1
+sleep 0.5
 i3-msg "exec kitty --directory '~/dev/associationof1a3s-web' --listen-on unix:/tmp/devserv"
-sleep 0.1
+sleep 0.5
 i3-msg "workspace 2 dev"
-sleep 0.1
+sleep 0.5
 i3-msg "exec chromium"
 sleep 3
 kitty @ --to unix:/tmp/develop send-text nvim$'\r'
