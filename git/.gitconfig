@@ -5,3 +5,5 @@
 	helper = cache
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
