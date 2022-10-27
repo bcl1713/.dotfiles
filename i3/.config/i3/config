@@ -9,11 +9,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 5 
 for_window [class="floating_term"] floating enable, resize set 500px 500px
-set $gaps 20
-gaps inner 20
-gaps outer -10
+
+gaps inner 14
+gaps outer -2
+smart_gaps on
+smart_borders on
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -216,9 +219,9 @@ bar {
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.focused          $blue $blue $darkgray $blue $blue
+client.focused_inactive $blue $darkgray $yellow $blue $darkgray
+client.unfocused        $blue $darkgray $yellow $blue $darkgray
 client.urgent           $red $red $white $red $red
 
 
@@ -230,3 +233,39 @@ exec xrandr --output eDP-1 --auto --scale 0.5x0.5 --output DP-1 --auto --above e
 exec sleep 0.5 && ~/.fehbg && picom -f &
 
 focus_follows_mouse no
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
