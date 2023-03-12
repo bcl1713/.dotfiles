@@ -69,6 +69,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --   capabilities = capabilities
 -- }
 
+nvim_lsp.pyright.setup {
+  on_attach = on_attach,
+}
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
