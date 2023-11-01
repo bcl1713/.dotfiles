@@ -108,4 +108,3 @@ alias luamake=/home/brian/Downloads/lua-language-server/3rd/luamake/luamake
 
 # neofetch startup
 neofetch --gtk2 off --gtk3 off
-source /usr/share/nvm/init-nvm.sh
