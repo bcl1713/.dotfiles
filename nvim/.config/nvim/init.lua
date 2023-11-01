@@ -1,15 +1,2 @@
--- Basics
-require 'global'
-require 'settings'
-require 'keybinds'
-require 'plugins'
-
--- Theme
-require 'nv-theme'
-
--- Telescope
-require 'nv-telescope'
-
--- Harpoon
-require 'nv-harpoon'
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
