@@ -12,26 +12,27 @@
 for_window [class=".*"] border pixel 5 
 for_window [class="floating_term"] floating enable, resize set 500px 500px
 
-gaps inner 14
-gaps outer -2
-smart_gaps on
-smart_borders on
+# Removed configuration for i3-gaps
+# gaps inner 14
+# gaps outer -2
+# smart_gaps on
+# smart_borders on
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 
-font pango:FiraCode Nerd Font Mono 8
+font pango:FiraCode Nerd Font Regular 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status kill -SIGUSR1 i3status
-set $refresh_i3blocks pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
+# set $refresh_i3status kill -SIGUSR1 i3status
+# set $refresh_i3blocks pkill -RTMIN+10 i3blocks
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -48,7 +49,8 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
-bindsym $mod+o exec "~/bin/develop.zsh"
+# custom binding for custom script I no longer have
+# bindsym $mod+o exec "~/bin/develop.zsh"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -228,46 +230,46 @@ client.urgent           $red $red $white $red $red
 
 
 # Remap cap to ctl key
-exec setxkbmap -option caps:ctrl_modifier
+# exec setxkbmap -option caps:ctrl_modifier
 
-exec xbindkeys -p
-exec xrandr --output eDP-1 --auto --scale 0.5x0.5 --output DP-1 --auto --right-of eDP-1
-exec sleep 0.5 && ~/.fehbg && picom -f &
+# exec xbindkeys -p
+exec xrandr --output eDP-1-1 --auto --scale 0.5x0.5 --output DP-1 --auto --right-of eDP-1-1
+# exec sleep 0.5 && ~/.fehbg && picom -f &
 
 focus_follows_mouse no
 
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# set $mode_gaps Gaps: (o) outer, (i) inner
+# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# bindsym $mod+Shift+g mode "$mode_gaps"
+#
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
+#
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
+#
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
+#
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
+#
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
