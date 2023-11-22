@@ -233,8 +233,12 @@ client.urgent           $red $red $white $red $red
 # exec setxkbmap -option caps:ctrl_modifier
 
 # exec xbindkeys -p
-exec xrandr --output eDP-1-1 --auto --scale 0.5x0.5 --output DP-1 --auto --right-of eDP-1-1
+exec --no-startup-id xrandr --output eDP-1 --auto --scale 0.5x0.5 --output DP-1 --auto --right-of eDP-1
+exec --no-startup-id xrandr --output eDP-1-1 --auto --scale 0.5x0.5 --output DP-1-1 --auto --right-of eDP-1-1
 # exec sleep 0.5 && ~/.fehbg && picom -f &
+
+# Start insync
+exec --no-startup-id insync start
 
 focus_follows_mouse no
 
